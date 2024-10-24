@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace NewLayeredArchitecture.Domain.Entities;
+﻿namespace NewLayeredArchitecture.Domain.Entities;
 
 public class Customer
 {

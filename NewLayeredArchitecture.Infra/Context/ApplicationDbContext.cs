@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NewLayeredArchitecture.Domain.Entities;
 
+
 namespace NewLayeredArchitecture.Infra.Context;
 
 public class ApplicationDbContext : DbContext
@@ -10,6 +11,13 @@ public class ApplicationDbContext : DbContext
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseNpgsql("connectionString");
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

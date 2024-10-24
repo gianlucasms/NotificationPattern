@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using NewLayeredArchitecture.Application.Notifications;
+﻿using NewLayeredArchitecture.Application.Notifications;
 using NewLayeredArchitecture.Domain.Entities;
 using NewLayeredArchitecture.Domain.Repositories;
 

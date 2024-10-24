@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace NewLayeredArchitecture.Application.Notifications;
+﻿namespace NewLayeredArchitecture.Application.Notifications;
 
 public interface INotificationHandler
 {

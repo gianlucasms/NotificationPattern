@@ -8,9 +8,9 @@ public abstract class Entity
 
     public IReadOnlyCollection<Notification> Notifications => _notifications.AsReadOnly();
 
-    protected void AddNotification(string message)
+    protected void AddNotification(string message, string key)
     {
-        _notifications.Add(new Notification(message));
+        _notifications.Add(new Notification(key, message));
     }
 
     protected void ClearNotifications()

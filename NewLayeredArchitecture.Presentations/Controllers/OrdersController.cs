@@ -17,14 +17,12 @@ namespace NewLayeredArchitecture.Presentation.Controllers
             _notificationHandler = notificationHandler;
         }
 
-        // GET: Orders
         public async Task<IActionResult> Index()
         {
             var orders = await _orderAppService.GetAllOrdersAsync(); 
             return View(orders);
         }
 
-        // GET: Orders/Details/5
         public async Task<IActionResult> Details(int id)
         {
             var order = await _orderAppService.GetOrderByIdAsync(id); 
@@ -64,7 +62,6 @@ namespace NewLayeredArchitecture.Presentation.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
             var order = await _orderAppService.GetOrderByIdAsync(id);
@@ -113,12 +110,11 @@ namespace NewLayeredArchitecture.Presentation.Controllers
             return View(order);
         }
 
-        // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var result = await _orderAppService.DeleteOrderAsync(id); // Implemente este método no seu serviço
+            var result = await _orderAppService.DeleteOrderAsync(id);
 
             if (_notificationHandler.HasNotifications())
             {

@@ -1,17 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using NewLayeredArchitecture.Infra.Context;
-using NewLayeredArchitecture.Infra.Repositories;
 using NewLayeredArchitecture.Application.Services;
-using NewLayeredArchitecture.Domain.Repositories;
 using NewLayeredArchitecture.Application.Notifications;
+using NewLayeredArchitecture.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddScoped<OrderAppService>();
 

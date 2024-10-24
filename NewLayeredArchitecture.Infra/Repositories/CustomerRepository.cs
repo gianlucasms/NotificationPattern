@@ -3,7 +3,7 @@ using NewLayeredArchitecture.Domain.Entities;
 using NewLayeredArchitecture.Domain.Repositories;
 using NewLayeredArchitecture.Infra.Context;
 
-namespace MyProject.Infra.Repositories;
+namespace NewLayeredArchitecture.Infra.Repositories;
 
 public class CustomerRepository : ICustomerRepository
 {
